@@ -1,0 +1,62 @@
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-36 h-[84px] flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2 flex-shrink-0">
+      <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#logo-clip)">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C15.5228 0 20 4.47715 20 10V0H30C35.5228 0 40 4.47715 40 10C40 15.5228 35.5228 20 30 20C35.5228 20 40 24.4772 40 30C40 32.7423 38.8961 35.2268 37.1085 37.0334L37.0711 37.0711L37.0379 37.1041C35.2309 38.8943 32.7446 40 30 40C27.2741 40 24.8029 38.9093 22.999 37.1405C22.9756 37.1175 22.9522 37.0943 22.9289 37.0711C22.907 37.0492 22.8852 37.0272 22.8635 37.0051C21.0924 35.2009 20 32.728 20 30C20 35.5228 15.5228 40 10 40C4.47715 40 0 35.5228 0 30V20H10C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0ZM18 10C18 14.4183 14.4183 18 10 18V2C14.4183 2 18 5.58172 18 10ZM38 30C38 25.5817 34.4183 22 30 22C25.5817 22 22 25.5817 22 30H38ZM2 22V30C2 34.4183 5.58172 38 10 38C14.4183 38 18 34.4183 18 30V22H2ZM22 18V2H30C34.4183 2 38 5.58172 38 10C38 14.4183 34.4183 18 30 18H22Z" fill="#4CAF4F"/>
+        </g>
+        <defs>
+          <clipPath id="logo-clip">
+            <rect width="40" height="40" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
+      <span class="text-xl font-semibold text-neutral-dgrey">Nextcent</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:flex items-center gap-8">
+      <a href="#" class="text-neutral-dgrey font-medium hover:text-brand-primary transition-colors">Home</a>
+      <a href="#" class="text-neutral-grey hover:text-brand-primary transition-colors">About</a>
+      <a href="#" class="text-neutral-grey hover:text-brand-primary transition-colors">Features</a>
+      <a href="#" class="text-neutral-grey hover:text-brand-primary transition-colors">Pricing</a>
+      <a href="#" class="text-neutral-grey hover:text-brand-primary transition-colors">Gallery</a>
+      <a href="#" class="text-neutral-grey hover:text-brand-primary transition-colors">Testimonials</a>
+    </nav>
+
+    <!-- Desktop CTA -->
+    <div class="hidden lg:flex items-center gap-6">
+      <a href="#" class="text-neutral-dgrey font-medium hover:text-brand-primary transition-colors">Login</a>
+      <a href="#" class="px-8 py-3 bg-brand-primary text-white rounded font-medium hover:bg-green-600 transition-colors text-sm">Sign up</a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button
+      class="lg:hidden flex flex-col gap-1.5 p-2"
+      (click)="toggleMenu()"
+      aria-label="Toggle menu"
+    >
+      <span class="w-6 h-0.5 bg-neutral-dgrey block transition-all" [class.rotate-45]="menuOpen" [class.translate-y-2]="menuOpen"></span>
+      <span class="w-6 h-0.5 bg-neutral-dgrey block transition-all" [class.opacity-0]="menuOpen"></span>
+      <span class="w-6 h-0.5 bg-neutral-dgrey block transition-all" [class.-rotate-45]="menuOpen" [class.-translate-y-2]="menuOpen"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (menuOpen) {
+    <div class="lg:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
+      <a href="#" class="text-neutral-dgrey font-medium hover:text-brand-primary transition-colors">Home</a>
+      <a href="#" class="text-neutral-grey hover:text-brand-primary transition-colors">About</a>
+      <a href="#" class="text-neutral-grey hover:text-brand-primary transition-colors">Features</a>
+      <a href="#" class="text-neutral-grey hover:text-brand-primary transition-colors">Pricing</a>
+      <a href="#" class="text-neutral-grey hover:text-brand-primary transition-colors">Gallery</a>
+      <a href="#" class="text-neutral-grey hover:text-brand-primary transition-colors">Testimonials</a>
+      <div class="flex items-center gap-4 pt-2 border-t border-gray-100">
+        <a href="#" class="text-neutral-dgrey font-medium hover:text-brand-primary transition-colors">Login</a>
+        <a href="#" class="px-6 py-2 bg-brand-primary text-white rounded font-medium hover:bg-green-600 transition-colors text-sm">Sign up</a>
+      </div>
+    </div>
+  }
+</header>
